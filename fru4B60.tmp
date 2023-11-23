@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://djr3ylsqf5has"]
+
+[ext_resource type="Script" path="res://fruit.gd" id="1_h6v1o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xgild"]
+radius = 34.3739
+
+[sub_resource type="SphereMesh" id="SphereMesh_ecnjx"]
+
+[node name="Fruit" type="Node2D" groups=["fruit1"]]
+script = ExtResource("1_h6v1o")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+gravity_scale = 0.7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(0.32001, 0.32001)
+shape = SubResource("CircleShape2D_xgild")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="RigidBody2D/CollisionShape2D"]
+scale = Vector2(68.2479, 68.2479)
+mesh = SubResource("SphereMesh_ecnjx")
+
+[connection signal="body_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_entered"]
+[connection signal="body_shape_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_shape_entered"]
