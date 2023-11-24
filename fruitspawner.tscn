@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddenjsq5t4prv"]
+[gd_scene load_steps=2 format=3 uid="uid://ddenjsq5t4prv"]
 
 [ext_resource type="Script" path="res://Fruitspawner.gd" id="1_pyi2m"]
-[ext_resource type="PackedScene" uid="uid://djr3ylsqf5has" path="res://fruit.tscn" id="2_aqv85"]
 
 [node name="Fruitspawner" type="Node"]
 script = ExtResource("1_pyi2m")
-
-[node name="Fruit" parent="." instance=ExtResource("2_aqv85")]

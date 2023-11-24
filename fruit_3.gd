@@ -11,9 +11,7 @@ func _process(delta: float) -> void:
 	pass#print(global_position)
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	
 		if area.get_parent().get_parent().is_in_group('fruit' + str(fruititeration)):
-			
 			var instance = preload('res://fruit_3.tscn').instantiate()
 			var collision = instance.get_child(0).get_child(1)
 			var mesh = instance.get_child(0).get_child(0)

@@ -7,7 +7,7 @@ radius = 34.3739
 
 [sub_resource type="SphereMesh" id="SphereMesh_ecnjx"]
 
-[node name="Fruit" type="Node2D" groups=["fruit1"]]
+[node name="Fruit" type="Node2D"]
 script = ExtResource("1_h6v1o")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
@@ -20,8 +20,12 @@ scale = Vector2(0.32001, 0.32001)
 shape = SubResource("CircleShape2D_xgild")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="RigidBody2D/CollisionShape2D"]
+modulate = Color(0, 1, 1, 1)
 scale = Vector2(68.2479, 68.2479)
 mesh = SubResource("SphereMesh_ecnjx")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="RigidBody2D"]
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="body_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_entered"]
-[connection signal="body_shape_entered" from="RigidBody2D" to="." method="_on_rigid_body_2d_body_shape_entered"]

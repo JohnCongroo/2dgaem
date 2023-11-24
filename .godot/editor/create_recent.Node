@@ -1,7 +1,7 @@
+RichTextLabel
 Node
 Area2D
 Container
-RichTextLabel
 CollisionShape2D
 MeshInstance2D
 Polygon2D

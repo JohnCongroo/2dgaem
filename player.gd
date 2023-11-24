@@ -3,15 +3,14 @@ const SPEED = 250
 @onready var body = $CharacterBody2D
 @onready var player = $CharacterBody2D/AnimatedSprite2D
 var fruit = preload('res://fruit.tscn')
+signal spawn_fruit(num)
 
 func _ready() -> void:
 	player.play('idle')
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
-		var fruitinstance = fruit.instantiate()
-		fruitinstance.global_position = body.global_position
-		get_parent().add_child(fruitinstance)
+		emit_signal('spawn_fruit')
 	
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = Vector2(input_dir.x, input_dir.y)
