@@ -1,49 +1,65 @@
-[gd_scene load_steps=3 format=3 uid="uid://pcopjwswdxgk"]
+[gd_scene load_steps=4 format=3 uid="uid://pcopjwswdxgk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_unrmi"]
-size = Vector2(33.8534, 3.13725)
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_pulhp"]
 
-[sub_resource type="QuadMesh" id="QuadMesh_sc3mw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivf2a"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_woa3e"]
 
 [node name="Jar" type="Node2D"]
+position = Vector2(213, -27)
+scale = Vector2(0.646497, 1.19394)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(535, 564)
+scale = Vector2(38.5994, 4.22603)
+physics_material_override = SubResource("PhysicsMaterial_pulhp")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_ivf2a")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+scale = Vector2(19.96, 19.96)
+mesh = SubResource("QuadMesh_woa3e")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-rotation = 1.57047
+position = Vector2(878, 287)
+rotation = 1.57079
+scale = Vector2(23.5194, 4.22603)
+physics_material_override = SubResource("PhysicsMaterial_pulhp")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(346.74, 411.2)
-scale = Vector2(42.84, 42.84)
-shape = SubResource("RectangleShape2D_unrmi")
+shape = SubResource("RectangleShape2D_ivf2a")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2"]
+scale = Vector2(19.96, 19.96)
+mesh = SubResource("QuadMesh_woa3e")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
-rotation = 1.57047
+position = Vector2(191, 286)
+rotation = 1.57079
+scale = Vector2(23.5194, 4.22603)
+physics_material_override = SubResource("PhysicsMaterial_pulhp")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(360.132, -407.883)
-scale = Vector2(42.84, 42.84)
-shape = SubResource("RectangleShape2D_unrmi")
+shape = SubResource("RectangleShape2D_ivf2a")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-position = Vector2(-410.125, 353.875)
-scale = Vector2(171.65, 1884.91)
-mesh = SubResource("QuadMesh_sc3mw")
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D3"]
+scale = Vector2(19.96, 19.96)
+mesh = SubResource("QuadMesh_woa3e")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="MeshInstance2D"]
-position = Vector2(3.10113, -0.243674)
-scale = Vector2(0.00756144, 0.000688587)
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(1220.42, 558.653)
+scale = Vector2(35.976, -0.317183)
+physics_material_override = SubResource("PhysicsMaterial_pulhp")
+metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MeshInstance2D/StaticBody2D"]
-position = Vector2(48, 1016)
-scale = Vector2(42.84, 42.84)
-shape = SubResource("RectangleShape2D_unrmi")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+shape = SubResource("RectangleShape2D_ivf2a")
 
-[node name="MeshInstance2D2" type="MeshInstance2D" parent="."]
-position = Vector2(416, 342.938)
-scale = Vector2(132.25, 1442.13)
-mesh = SubResource("QuadMesh_sc3mw")
-
-[node name="MeshInstance2D3" type="MeshInstance2D" parent="."]
-position = Vector2(24, 1016)
-rotation = -1.57079
-scale = Vector2(132.25, 852.25)
-mesh = SubResource("QuadMesh_sc3mw")
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D4"]
+scale = Vector2(19.96, 19.96)
+mesh = SubResource("QuadMesh_woa3e")

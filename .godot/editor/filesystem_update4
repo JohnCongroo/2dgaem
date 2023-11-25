@@ -1,5 +1,4 @@
 res://player.tscn
-res://Fruitspawner.gd
 res://main.tscn
 res://jar.tscn
 res://fruit.tscn
@@ -7,3 +6,6 @@ res://fruit_2.tscn
 res://globals.tscn
 res://fruitspawner.tscn
 res://fruit_3.tscn
+res://Fruitspawner.gd
+res://fruit.gd
+res://player.gd

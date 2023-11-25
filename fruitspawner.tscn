@@ -4,3 +4,9 @@
 
 [node name="Fruitspawner" type="Node"]
 script = ExtResource("1_pyi2m")
+
+[node name="ghetto" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="timeout" from="ghetto" to="." method="_on_ghetto_timeout"]
