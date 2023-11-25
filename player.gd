@@ -8,7 +8,7 @@ signal spawn_fruit(num)
 func _ready() -> void:
 	player.play('idle')
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept"):
 		emit_signal('spawn_fruit')
 	

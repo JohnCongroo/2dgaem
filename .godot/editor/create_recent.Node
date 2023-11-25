@@ -1,8 +1,9 @@
+Node2D
+CollisionShape2D
+Area2D
 RichTextLabel
 Node
-Area2D
 Container
-CollisionShape2D
 MeshInstance2D
 Polygon2D
 ColorRect
@@ -14,6 +15,5 @@ DirectionalLight2D
 TextureRect
 DirectionalLight3D
 WorldEnvironment
-Node2D
 AnimationTree
 AnimatedSprite2D

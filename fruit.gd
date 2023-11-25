@@ -1,19 +1,27 @@
 extends Node2D
 @onready var body = $RigidBody2D
-var fruititeration = 1
+var fruititeration
 signal join(body)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$RigidBody2D/RichTextLabel.add_text("fuck")
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	pass#print(global_position)
 
 func _on_rigid_body_2d_body_entered(body: Node) -> void:
-	if body is RigidBody2D and body.get_parent().is_in_group('fruit' + str(fruititeration)):
+	if body.get_parent().is_in_group('fruit' + str(fruititeration)):
+		visible = false
+		$RigidBody2D/CollisionShape2D.set_deferred('disabled', true)
+		#body.get_parent().visible = false
+		#body.get_child(0).set_deferred('disabled', true)
 		join.emit(body)
-		queue_free()
-		print('yaboinga dagoinba ')
+
+#func _on_area_2d_area_entered(area: Area2D) -> void:
+#	if area.get_owner().is_in_group('fruit' + str(fruititeration)):
+#
+#		join.emit(area)
+#		queue_free()# Replace with function body.
 
