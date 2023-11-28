@@ -58,7 +58,7 @@ hold={
 
 [physics]
 
-common/physics_ticks_per_second=120
+2d/run_on_separate_thread=true
 2d/physics_engine="GodotPhysics2D"
 
 [rendering]

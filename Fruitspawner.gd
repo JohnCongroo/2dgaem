@@ -28,7 +28,6 @@ func _on_player_spawn_fruit() -> void:
 	get_child(2).get_child(3).visible = false
 	get_child(2).get_child(3).get_child(0).disabled = true
 	get_child(1).get_child(1).get_child(0).start()
-	print('timers tarted?')
 	next = spawnFruit(Vector2(1000,100), randi_range(1,5))
 
 func _on_fruit_join(body: Node) -> void:
@@ -56,7 +55,7 @@ func spawnFruit(location: Vector2, iteration: int):
 	label.text = str(iteration)
 	fruit.add_to_group(group)
 	mesh.set_modulate(Color(iteration * 0.15,0.5,0.3, 0.8))
-	collision.scale += iteration * 0.5 * Vector2(0.25,0.25)
+	collision.scale += pow(iteration,1.5) * Vector2(0.1,0.1)
 	get_parent().add_child.call_deferred(fruit)
 	return fruit
 
