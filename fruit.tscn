@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://djr3ylsqf5has"]
+[gd_scene load_steps=10 format=3 uid="uid://djr3ylsqf5has"]
 
 [ext_resource type="Script" path="res://fruit.gd" id="1_h6v1o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dnd6v"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_sswra"]
 friction = 0.5
@@ -9,6 +11,8 @@ bounce = 0.05
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xgild"]
 radius = 34.3739
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xxy75"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_ecnjx"]
 
@@ -50,6 +54,7 @@ _data = {
 }
 
 [node name="Fruit" type="Node2D"]
+material = SubResource("ShaderMaterial_dnd6v")
 script = ExtResource("1_h6v1o")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
@@ -67,6 +72,7 @@ shape = SubResource("CircleShape2D_xgild")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="RigidBody2D/CollisionShape2D"]
 modulate = Color(0, 1, 1, 1)
+material = SubResource("ShaderMaterial_xxy75")
 scale = Vector2(68.2479, 68.2479)
 mesh = SubResource("SphereMesh_ecnjx")
 

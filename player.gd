@@ -19,6 +19,7 @@ func _physics_process(delta: float) -> void:
 		
 		if Input.is_action_just_pressed("escape"):
 			get_tree().quit()
+			
 	
 	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = Vector2(input_dir.x, input_dir.y)
@@ -29,6 +30,10 @@ func _physics_process(delta: float) -> void:
 	else:
 		body.velocity.x = move_toward(body.velocity.x, 0, SPEED)
 		#body.velocity.y = move_toward(body.velocity.y, 0, SPEED)
+		
+	if Input.is_action_just_pressed("mouse_left"):
+		body.global_position.x = get_global_mouse_position().x
+		emit_signal('spawn_fruit')
 		
 	body.move_and_slide()
 

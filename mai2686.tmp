@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://doocd3ljhcvha"]
+
+[ext_resource type="Script" path="res://Fruitspawner.gd" id="1_4ufom"]
+[ext_resource type="PackedScene" uid="uid://cp117x7vs607n" path="res://player.tscn" id="1_lmyar"]
+[ext_resource type="Texture2D" uid="uid://bmrnrm4y3q1a6" path="res://wizard/space.jpg" id="2_qvdj3"]
+[ext_resource type="PackedScene" uid="uid://pcopjwswdxgk" path="res://jar.tscn" id="4_8behu"]
+[ext_resource type="PackedScene" uid="uid://ddenjsq5t4prv" path="res://fruitspawner.tscn" id="5_skwpy"]
+[ext_resource type="PackedScene" uid="uid://dfxp8gjc538ia" path="res://retry.tscn" id="6_tofiq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_3p8jc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dh4qb"]
+size = Vector2(19.9063, 16.2444)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_4ufom")
+
+[node name="Grass" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(576, 281)
+scale = Vector2(1.2527, 1.36596)
+texture = ExtResource("2_qvdj3")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Grass"]
+visible = false
+
+[node name="Player" parent="." instance=ExtResource("1_lmyar")]
+position = Vector2(543, 48)
+
+[node name="Fruitspawner" parent="Player" instance=ExtResource("5_skwpy")]
+
+[node name="Jar" parent="." instance=ExtResource("4_8behu")]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(554, 107)
+scale = Vector2(443.757, 25.6681)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Area2D"]
+modulate = Color(1, 0, 0, 0.0901961)
+position = Vector2(0.0135208, 0)
+scale = Vector2(0.883366, 1)
+mesh = SubResource("BoxMesh_3p8jc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.0135208, -0.0389592)
+rotation = -3.14159
+scale = Vector2(0.0442629, -0.056151)
+shape = SubResource("RectangleShape2D_dh4qb")
+
+[node name="ghettotimer2" type="Timer" parent="Area2D"]
+wait_time = 3.0
+one_shot = true
+
+[node name="Retry" parent="." instance=ExtResource("6_tofiq")]
+modulate = Color(1, 1, 1, 0)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Area2D/ghettotimer2" to="." method="_on_ghettotimer_2_timeout"]

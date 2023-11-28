@@ -3,6 +3,7 @@ extends Node2D
 var fruititeration
 var bodies
 signal join(body)
+var connect = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,14 +22,15 @@ func _physics_process(delta: float) -> void:
 	bodies = body.get_colliding_bodies()
 
 func _on_rigid_body_2d_body_entered(body: Node) -> void:
-	if body.get_parent().is_in_group('fruit' + str(fruititeration)):
-		$AnimationPlayer.play('vanish')
-		$RigidBody2D/RichTextLabel.clear()
-		#visible = false
-		$RigidBody2D/CollisionShape2D.set_deferred('disabled', true)
-		#body.get_parent().visible = false
-		#body.get_child(0).set_deferred('disabled', true)
-		join.emit(body)
+	if connect: 
+		if body.get_parent().is_in_group('fruit' + str(fruititeration)):
+			$AnimationPlayer.play('vanish')
+			$RigidBody2D/RichTextLabel.clear()
+			#visible = false
+			$RigidBody2D/CollisionShape2D.set_deferred('disabled', true)
+			#body.get_parent().visible = false
+			#body.get_child(0).set_deferred('disabled', true)
+			join.emit(body)
 
 #func _on_area_2d_area_entered(area: Area2D) -> void:
 #	if area.get_owner().is_in_group('fruit' + str(fruititeration)):
