@@ -1,7 +1,8 @@
-res://fruit.tscn::0d86774ca67029694a60e1e1c754b277::1700945865::res://.godot/exported/133200997/export-96d9542281595709dde67debd2e51295-fruit.scn
-res://fruitspawner.tscn::f057717c2655543562b0537e7bcd8c66::1700945865::res://.godot/exported/133200997/export-1b23f04695e75bc47254dbca73ba666e-fruitspawner.scn
-res://globals.tscn::142cf0f894b0391b254640d02a18614f::1700945865::res://.godot/exported/133200997/export-62d9589ff2c9f8d4f68fab93886028d2-globals.scn
-res://jar.tscn::e7759f9b67f0babb186de4f4bfaa8efe::1700945865::res://.godot/exported/133200997/export-14830974b802ab9176e54899add5c1fc-jar.scn
-res://main.tscn::bdc046ab73fe54e059e0b298a7b60000::1700945877::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
-res://player.tscn::503a70f619d498b4c61da50d0f9b25a4::1700945864::res://.godot/exported/133200997/export-36a25e342948d0ceacc500772b5412b3-player.scn
-res://retry.tscn::1928d6c26939709e9cf209f1cf49ced9::1700945865::res://.godot/exported/133200997/export-fea4c12082bfa9da79bab6cdb415b738-retry.scn
+res://fruit.tscn::3912612311be730257aeddb286644863::1702526230::res://.godot/exported/133200997/export-96d9542281595709dde67debd2e51295-fruit.scn
+res://fruitspawner.tscn::f057717c2655543562b0537e7bcd8c66::1702526230::res://.godot/exported/133200997/export-1b23f04695e75bc47254dbca73ba666e-fruitspawner.scn
+res://globals.tscn::142cf0f894b0391b254640d02a18614f::1702526230::res://.godot/exported/133200997/export-62d9589ff2c9f8d4f68fab93886028d2-globals.scn
+res://jar.tscn::dd4203916291529aabc086a13f17e5b2::1702526230::res://.godot/exported/133200997/export-14830974b802ab9176e54899add5c1fc-jar.scn
+res://main.tscn::a56a3bb4a308318aab4701ab33bf3884::1702526230::res://.godot/exported/133200997/export-3070c538c03ee49b7677ff960a3f5195-main.scn
+res://player.tscn::071afec19856c66d8cc4acfeef4cee24::1702526230::res://.godot/exported/133200997/export-36a25e342948d0ceacc500772b5412b3-player.scn
+res://retry.tscn::171b3fafd25773ed765d854e797d7ddf::1702526231::res://.godot/exported/133200997/export-fea4c12082bfa9da79bab6cdb415b738-retry.scn
+res://shadertest.tscn::5e1f693776ccc3e3fc7fb5295812c819::1702526231::res://.godot/exported/133200997/export-06566b2d93ddafa8801ce62bd73460ff-shadertest.scn

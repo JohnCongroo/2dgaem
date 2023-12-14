@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://djr3ylsqf5has"]
+[gd_scene load_steps=11 format=3 uid="uid://djr3ylsqf5has"]
 
 [ext_resource type="Script" path="res://fruit.gd" id="1_h6v1o"]
+[ext_resource type="Shader" path="res://wave.gdshader" id="2_015rl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dnd6v"]
 
@@ -13,6 +14,8 @@ bounce = 0.05
 radius = 34.3739
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xxy75"]
+render_priority = 0
+shader = ExtResource("2_015rl")
 
 [sub_resource type="SphereMesh" id="SphereMesh_ecnjx"]
 
@@ -58,6 +61,8 @@ material = SubResource("ShaderMaterial_dnd6v")
 script = ExtResource("1_h6v1o")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 mass = 0.01
 inertia = 0.01
 physics_material_override = SubResource("PhysicsMaterial_sswra")

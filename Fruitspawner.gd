@@ -23,6 +23,8 @@ func _on_player_hold_fruit() -> void:
 	pass
 	
 func _on_player_spawn_fruit() -> void:
+	$AudioStreamPlayer.pitch_scale = 0.85
+	$AudioStreamPlayer.play()
 	$Area2D/CollisionShape2D.disabled = true
 	$Area2D/ghettotimer2.start()
 	var playerPosition = player.get_child(0).global_position
@@ -31,7 +33,7 @@ func _on_player_spawn_fruit() -> void:
 	get_child(2).get_child(3).visible = false
 	get_child(2).get_child(3).get_child(0).disabled = true
 	get_child(1).get_child(1).get_child(0).start()
-	next = spawnFruit(Vector2(1000,100), randi_range(1,4), false)
+	next = spawnFruit(Vector2(1000,100), randi_range(1,5), false)
 
 func _on_fruit_join(body: Node) -> void:
 	call_deferred("_spawn_fruit_after_join", body)
@@ -43,6 +45,8 @@ func _spawn_fruit_after_join(body: Node) -> void:
 		var bodyFruit = body.get_parent()
 		var spawnLocation = Vector2((joiners[0].global_position.x + joiners[1].global_position.x)/2,(joiners[0].global_position.y + joiners[1].global_position.y)/2)
 		spawnFruit(spawnLocation, bodyFruit.fruititeration + 1, true)	
+		$AudioStreamPlayer.pitch_scale = 0.40
+		$AudioStreamPlayer.play()
 		
 		for j in joiners:
 			score += j.get_parent().fruititeration
@@ -76,8 +80,8 @@ func _on_ghettotimer_2_timeout() -> void:
 	$Area2D/CollisionShape2D.disabled = false
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	#print($Area2D/ghettotimer2.time_left)
 	if body is RigidBody2D:
 		print('you lose')
 		create_tween().tween_property($Retry, "modulate", Color(1,1,1,1), 0.15)
-		$Retry/Button.disabled = false
+		$Retry/ColorRect/Button.disabled = false
+		$Retry/ColorRect/Button.visible = true

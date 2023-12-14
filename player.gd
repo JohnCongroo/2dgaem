@@ -35,6 +35,8 @@ func _physics_process(delta: float) -> void:
 		body.global_position.x = get_global_mouse_position().x
 		emit_signal('spawn_fruit')
 		
+		
+	clamp(body.velocity.x, 0, 0)
 	body.move_and_slide()
 
 

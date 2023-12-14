@@ -3,21 +3,13 @@
 [ext_resource type="Shader" path="res://wave.gdshader" id="1_ussnd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tta51"]
+render_priority = 0
 shader = ExtResource("1_ussnd")
-shader_parameter/speed = 1.0
-shader_parameter/minStrength = 0.05
-shader_parameter/maxStrength = 0.01
-shader_parameter/strengthScale = 100.0
-shader_parameter/interval = 3.5
-shader_parameter/detail = 1.0
-shader_parameter/distortion = null
-shader_parameter/heightOffset = null
-shader_parameter/offset = 0.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_llmuo"]
 
 [node name="MeshInstance2D" type="MeshInstance2D"]
 material = SubResource("ShaderMaterial_tta51")
 position = Vector2(343, 95)
-scale = Vector2(68.2479, 68.2479)
+scale = Vector2(68.0704, 68.2479)
 mesh = SubResource("SphereMesh_llmuo")

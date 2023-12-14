@@ -1,4 +1,6 @@
 res://player.tscn
+res://fruit.gd
+res://Fruitspawner.gd
 res://wave.gdshader
 res://main.tscn
 res://jar.tscn

@@ -1,6 +1,8 @@
 RichTextLabel
-TextureButton
 ColorRect
+AudioStreamPlayer
+AudioStreamPlayer2D
+TextureButton
 Button
 Timer
 Area2D
